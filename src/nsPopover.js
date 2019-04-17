@@ -368,6 +368,7 @@
              * @param e {Event}  The event which caused the popover to be shown.
              */
             display: function(delay, e) {
+              addEventListeners();
               // Disable popover if ns-popover value is false
               if ($parse(attrs.nsPopover)(scope) === false) {
                 return;
@@ -403,7 +404,7 @@
                 }
 
                 move($popover, placement_, align_, elmRect, $triangle);
-                addEventListeners();
+                
 
                 // Hide the popover without delay on the popover click events.
                 if (true === options.hideOnInsideClick) {
